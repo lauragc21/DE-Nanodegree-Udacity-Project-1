@@ -13,7 +13,7 @@ The purpose of this project is to extract, transform and load the data from the 
      alt="Database Schema Design"
 />
 
-For this project, a Star Schema was designed in order to create a fact table called `songplays` and four dimension tables: `artists`, `songs`, `users` and `time`
+For this project, a star schema was designed in order to create one fact table, `songplays`, and four dimension tables: `artists`, `songs`, `users` and `time`
 
 ## ETL Pipeline:
 
