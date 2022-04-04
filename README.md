@@ -20,7 +20,7 @@ For this project, a Star Schema was designed in order to create a fact table cal
 
 The ETL pipeline consists of three main steps:
 - Creates the tables and fields as shown in the schema design image;
-- Extracts and tranforms the data present in the JSON files from the `song_data` and `log_data` directories;
+- Extracts and tranforms the data present in the JSON files from the `data/song_data` and `data/log_data` directories;
 - Loads the transformed data into the respective tables and fields.
 
 
