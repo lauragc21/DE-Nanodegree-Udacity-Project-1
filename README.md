@@ -31,6 +31,8 @@ This notebook explains each step of the process used in the etl.py script, using
 This notebook allows users to displays the first rows of each table in order to check them. It also contains sanity checks for the database that test column data types, primary key constraints and not-null constraints as well look for on-conflict clauses wherever required.
 
 
-* **How to run the Python scripts:** In order to create the database, the user needs firstly to run the **sql_queries.py** file, which will define the sql queries for table creation and data insertion. Secondly, the user needs to run the **create_tables.py** file, which will read the queries file and create the necessary tables. After running this file, the user can finally run the **etl.py** file, which will populate the newly created tables. 
+## How to run the Python scripts:
 
-Attention - if for some reason the user feels the need to delete the tables and run the process again, the **create_tables.py** file will delete the existing tables before creating new ones.
+In order to create the database, the user needs firstly to run the **sql_queries.py** file, which will define the sql queries for table creation and data insertion. Secondly, the user needs to run the **create_tables.py** file, which will read the queries file and create the necessary tables. After running this file, the user can finally run the **etl.py** file, which will populate the newly created tables. 
+
+***Attention*** - if for some reason the user feels the need to delete the tables and run the process again, the **create_tables.py** file will delete the existing tables before creating new ones.
