@@ -9,7 +9,9 @@ The purpose of this project is to extract, transform and load the data from the 
 
 ## Database schema design and ETL pipeline:
 
-
+<img src="Database-schema.jpg"
+     alt="Database Schema Design"
+/>
 
 ## Explanation of the files:
 
