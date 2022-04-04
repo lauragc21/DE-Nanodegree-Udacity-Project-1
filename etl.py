@@ -6,6 +6,20 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    
+    """
+    Description: This function reads the files from data/songs_data directory, 
+    perform the necessary files transformations to allow the data to be saved correctly into song and artist tables,
+    and insert those same values into the respective tables.
+
+    Arguments:
+        cur: the cursor object.
+        filepath: song data file path.
+
+    Returns:
+        None
+    """
+    
     # open the song file
     df = pd.read_json(filepath, lines = True)
 
@@ -19,6 +33,20 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    
+    """
+    Description: This function reads the files from data/log_data directory, 
+    perform the necessary files and data transformations to allow the data to be saved correctly into user, time and songplays tables,
+    and insert those same values into the respective tables.
+
+    Arguments:
+        cur: the cursor object.
+        filepath: log data file path.
+
+    Returns:
+        None
+    """
+    
     # open log file
     df = pd.read_json(filepath, lines = True)
 
@@ -78,6 +106,22 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    
+    """
+    Description: This function is responsible for listing the files in a directory,
+    and then executing the ingest process for each file according to the function
+    that performs the transformation to save it to the database.
+
+    Arguments:
+        cur: the cursor object.
+        conn: connection to the database.
+        filepath: log data or song data file path.
+        func: function that transforms the data and inserts it into the database.
+
+    Returns:
+        None
+    """
+
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
@@ -95,8 +139,15 @@ def process_data(cur, conn, filepath, func):
         conn.commit()
         print('{}/{} files processed.'.format(i, num_files))
 
-# define databse connection
 def main():
+    
+    """
+    Description: This function creates the connection to the database, 
+    processes the files using process_song_file or process_log_file functions,
+    and close the databse connection when the triggered processes are finished.
+    
+    """
+    
     conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
     cur = conn.cursor()
 
