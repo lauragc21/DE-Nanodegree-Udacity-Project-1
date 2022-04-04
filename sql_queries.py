@@ -108,9 +108,9 @@ song_select = ("""
 SELECT DISTINCT t1.song_id, t1.artist_id
 FROM songs AS t1
 INNER JOIN artists AS t2 ON t1.artist_id = t2.artist_id
-WHERE LOWER(t1.title) IS NOT NULL
-AND LOWER(t2.name) IS NOT NULL
-AND t1.duration IS NOT NULL
+WHERE t1.title = %s
+AND t2.name = %s
+AND t1.duration = %s
 """)
 
 # QUERY LISTS
